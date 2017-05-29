@@ -1,0 +1,130 @@
+step1 - 
+
+dos2unix <files_name>
+
+Step 2. 
+
+Example command for copying file to a target host
+
+
+
+# Starting on a local machine, within a folder containing the appdynamics-was-agent-installation/ folder from git or via the direct download.
+
+# Command line:
+
+# Run a secure copy from the local machine to a bastion server
+
+  $ scp -r appdynamics-was-agent-installation/ @[bastion-ip]:/tmp
+
+  
+
+# WinSCP :
+
+# Copy the files to the '/tmp' directory on the bastion server
+
+  
+
+# Once the Copy has been completed connect to the bastion server
+
+# Command line:
+
+  $ ssh [user]@[bastion-ip]
+
+  
+
+# Putty Option:
+
+# Open a session to the bastion server via Putty
+
+  
+
+# Once on the bastion server run the following command, in order to copy the installation directory for the '/tmp' directory to a '/tmp' on a target host
+
+ $ scp -r /tmp/appdynamics-was-agent-installation/ [hostname]:/tmp
+
+  
+
+# Now, connect to the host
+
+  $ ssh [hostname]
+
+  $ sudo su - wasadm 
+
+  $ cp -r /tmp/appdynamics-was-agent-installation/ /home/wasadm
+
+  $ cd /home/wasadm/appdynamics-was-agent-installation/
+
+  $ ls -la /home/wasadm/appdynamics-was-agent-installation
+
+  
+
+Example of Expected Output:
+
+[wasadm@<HOST>:/home/wasadm]$  ls -la /home/wasadm/appdynamics-was-agent-installation
+
+drwxr-x---  3 wasadm wasgrp   4096 Jan 25 11:27 .
+
+drwxr-x--- 22 wasadm wasgrp   4096 Jan 24 15:51 ..
+
+-rw-r-----  1 wasadm wasgrp    750 Jan 24 15:52 controller_config.yml
+
+-rw-r-----  1 wasadm wasgrp    844 Jan 17 16:07 deployment_config.yml
+
+-rw-r-----  1 wasadm wasgrp 243598 Jan 25 11:31 install_appserver_agent.log
+
+-rwxr-x---  1 wasadm wasgrp  18627 Jan 25 11:27 install_appserver_agent.sh
+
+-rw-r-----  1 wasadm wasgrp    579 Jan 12 14:31 README.md
+
+drwxr-x---  3 wasadm wasgrp   4096 Jan 12 14:31 scripts
+
+controller_config.yml
+
+controller1
+
+  agent_location:
+
+  machine_agent:
+
+  agent_install_location:
+
+  proxy_host:
+
+  proxy_port:
+
+  cont_host:
+
+  cont_port:
+
+  acct_name:
+
+  acct_key:
+
+  ssl_enabled:
+
+  agent_archive:
+
+ 
+deployment_config.yml
+
+# App and Tier names are case sensitive
+
+controller1
+  <JVM_NAME>:
+
+    app_name:
+
+    tier_name:
+
+    node_name:
+
+  <JVM_NAME>:
+
+    app_name:
+
+    tier_name:
+
+    node_name:
+
+ 
+
