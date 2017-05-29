@@ -126,5 +126,63 @@ controller1
 
     node_name:
 
+ step4- 
+# Run the installation script 
+
+# The app, tier and node name are correct and the correct controller information is inserted     
+
+  
+
+# To get the Usage:
+
+$ ./install_appserver_agent.sh -h 
+
  
 
+# To run a No Operating installation, this will display variable used on an actual installation
+
+$ ./install_appserver_agent.sh -a 
+
+ 
+
+# To run a No Operating installation, this will display variable used on an actual installation, with logging set to debug
+
+$ ./install_appserver_agent.sh --debug -a
+
+ 
+
+# To install the appserver agent using a given jvm_name and controller
+
+$ ./install_appserver_agent.sh --debug -b <jvm_name> <controller_name>
+
+usage - 
+
+Usage: install_appserver_agent.sh [--debug][-h|-v] OPTIONS
+
+ 
+
+Installation of AppDynamics Java Agents on WebSphere.
+
+ 
+
+Arguments:
+
+  -h            Show this help message and exit
+
+  -v            Print version number
+
+ 
+
+  -a            Test run, prints config as read by this script
+
+  -s            Selectively install agents to one or more WAS servers/JVMs
+
+  -i            Install the agent for a single WAS server/JVM (prompted)
+
+  -b JVM_NAME CONTROLLER_NAME
+
+                Installs the agent for a single WAS server/JVM (non-interactive)
+
+                WebSphere server (JVM) name of agent to be updated.
+
+  --debug       Increases the default INFO log level to DEBUG'
