@@ -1,0 +1,51 @@
+OPTIONS
+Usage: install_appserver_agent.sh [--debug][-h|-v] OPTIONS
+
+Installation of AppDynamics Java Agents on WebSphere.
+
+Arguments:
+  -h            Show this help message and exit
+  -v            Print version number
+
+  -a            Test run, prints config as read by this script
+  -s            Selectively install agents to one or more WAS servers/JVMs
+  -i            Install the agent for a single WAS server/JVM (prompted)
+  -b JVM_NAME CONTROLLER_NAME
+                Installs the agent for a single WAS server/JVM (non-interactive)
+                WebSphere server (JVM) name of agent to be updated.
+  --debug       Increases the default INFO log level to DEBUG'
+
+NOTES
+
+
+
+
+
+
+
+
+
+The -s Flag maybe the easiest way of upgrade an app agent as it collects current the app servers present on the host
+
+  
+
+$ ./install_appserver_agent.sh -s
+
+$ ./install_appserver_agent.sh --debug -b <jvm_name> <controller_name>
+
+  
+
+JVM name is name of the hostname, the application, the tier name and the site number, like this
+
+E.g. site1
+
+CONTROLLER_NAME is the account name of the Appdynamics SAAS Server 
+
+  
+
+controller_name1     = Production controller
+
+controller_name2 = Test/Dev controller
+
+controller_name3    = h controller
+ 
